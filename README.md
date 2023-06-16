@@ -10,3 +10,7 @@ The details can refer /Lab1/img.png and /Lab1/input.txt
 
 ## Lab3
 Syntactic analysis of expressions using operator precedence parsing
+
+
+## Lab4
+Use LR analysis method to do syntax analysis on expressions
