@@ -157,18 +157,15 @@ bool analysis(string str, int table[][9], vector<string> grammers)
         if(op[0] == 'a')
             return true;
         else if(op[0] == 'n') {
-//            cout << "ACTION error" << endl;
             return false;
         }
         else if(op[0] == 's'){   //移进操作
-//            cout << "s:" << currentChar << endl;
             sign.push_back(currentChar);
             status.push_back(str2num(op.substr(1)));
             index ++;
         }else if(op[0] == 'r'){  //规约操作
             int grammer_num = str2num(op.substr(1));
             string currnetGrammer = grammers[grammer_num - 1];
-//            cout << "r:" << currnetGrammer << endl;
             char rightPart = currnetGrammer[0];
             string leftPart = currnetGrammer.substr(3);
 
@@ -178,10 +175,8 @@ bool analysis(string str, int table[][9], vector<string> grammers)
             }
 
             sign.push_back(rightPart);//字符左部入栈
-//            cout << V2index[rightPart] << endl;
             string tmp = translationTable(status.back(), V2index[rightPart], table);
             if(tmp == "null"){
-//                cout << "GOTO error" << endl;
                 return false;
             }
             else{
